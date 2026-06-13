@@ -1,0 +1,19 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Jupyter checkpoint files
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+myenv/
+
+# Jupyter workspace settings
+default.jupyterlab-workspace
+
+# Environment variables
+.env
+
+# Temporary notebooks
+Untitled.ipynb

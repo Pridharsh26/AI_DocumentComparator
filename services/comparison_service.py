@@ -35,10 +35,13 @@ class ComparisonService:
 
         for item in matched_chunks:
 
-            result = self.agent.analyze_change(
-                item["old_chunk"],
-                item["new_chunk"]
-            )
+            result = self.agent.analyze([
+            {
+                "old_chunk": item["old_chunk"],
+                "new_chunk": item["new_chunk"],
+                "similarity": item.get("similarity", 0)
+            }
+        ])
 
             try:
 

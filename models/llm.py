@@ -2,11 +2,10 @@ from langchain_openai import ChatOpenAI
 
 
 def get_llm():
-
-    llm = ChatOpenAI(
-        model="deepseek-7b",
-        api_key="abc-123",
+    return ChatOpenAI(
+        model="Qwen/Qwen3-4B",
         base_url="http://localhost:8000/v1",
+        api_key="abc-123",
         temperature=0
     )
 
