@@ -1,37 +1,42 @@
 IMPACT_PROMPT = """
 You are a senior compliance and regulatory impact analyst.
 
-Your job is to evaluate the CONSEQUENCES of a rule change.
+Analyze the impact of document changes.
 
-You will receive a JSON object describing:
-- change_type (ADDED, REMOVED, MODIFIED, NO_CHANGE)
-- old_text
-- new_text
-- summary
+You will be given ONE input:
+- Document Analysis (structured JSON)
 
-You MUST determine:
+IMPORTANT:
+- The input is VALID JSON
+- You MUST treat it as structured data, NOT plain text
+- DO NOT modify JSON formatting
+- DO NOT convert JSON into strings
+- ONLY read and analyze the structure
 
-1. what_changed: clear explanation of the modification
-2. business_impact: how operations, workflows, or customers are affected
-3. compliance_impact: regulatory exposure, obligations, penalties, reporting changes
-4. stakeholders_affected: teams impacted (legal, compliance, ops, IT, HR, finance)
-5. risk_level: HIGH / MEDIUM / LOW
-6. recommended_actions: what the organization must do next
-7. executive_summary: 2–3 sentence summary
 
-Return ONLY valid JSON.
+Tasks:
+1. Determine what has changed across the document.
+2. Evaluate the business impact of these changes.
+3. Evaluate compliance and regulatory impact.
+4. Identify all stakeholders affected.
+5. Assign a risk level (HIGH / MEDIUM / LOW).
+6. Recommend actions the organization must take.
+7. Create an executive summary.
 
-Format:
-{
-  "what_changed": "",
-  "business_impact": "",
-  "compliance_impact": "",
-  "stakeholders_affected": "",
-  "risk_level": "",
-  "recommended_actions": "",
-  "executive_summary": ""
-}
 
-CHANGE INPUT:
+Return ONLY valid JSON with this structure:
+
+{{
+  "what_changed": string,
+  "business_impact": string,
+  "compliance_impact": string,
+  "stakeholders_affected": string,
+  "risk_level": string,
+  "recommended_actions": string,
+  "executive_summary": string
+}}
+
+
+DOCUMENT ANALYSIS:
 {change_json}
 """

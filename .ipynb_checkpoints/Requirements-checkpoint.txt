@@ -1,1 +1,34 @@
-vllm
+# LangChain
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-text-splitters
+
+# Embeddings
+langchain-huggingface
+
+fastembed 
+
+# Vector Search
+faiss-cpu
+
+# Similarity Calculation
+scikit-learn
+numpy
+
+# Document Processing
+pypdf
+python-docx
+
+# Environment Variables
+python-dotenv
+
+# JSON Validation (optional but recommended)
+pydantic
+
+# HTTP Requests (optional)
+requests
+
+# Token Counting (used by LangChain/OpenAI ecosystem)
+tiktoken

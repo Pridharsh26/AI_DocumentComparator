@@ -1,7 +1,3 @@
-vllm
-# Streamlit UI
-streamlit
-
 # LangChain
 langchain
 langchain-core
@@ -11,9 +7,8 @@ langchain-text-splitters
 
 # Embeddings
 langchain-huggingface
-sentence-transformers
-transformers
-torch
+
+fastembed 
 
 # Vector Search
 faiss-cpu
